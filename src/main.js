@@ -5,7 +5,6 @@ const { log } = Apify.utils;
 
 const debug = true;
 // const BASE_URL = process.env.BASE_URL;
-const BASE_URL = proccess.env.BASE_URL || 'https://www.bing.com/maps';
 Apify.main(async () => {
     const input = await Apify.getInput();
 
