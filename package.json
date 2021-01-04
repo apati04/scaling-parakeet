@@ -12,7 +12,7 @@
     "markdown-toc": "^1.2.0"
   },
   "scripts": {
-    "start": "node main.js",
+    "start": "node ./src/main.js",
     "build-toc": "./node_modules/.bin/markdown-toc README.md -i",
     "lint": "eslint src test"
   },

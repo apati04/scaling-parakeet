@@ -1,15 +1,16 @@
-FROM apify/actor-node-chrome
+FROM apify/actor-node-chrome-xvfb
 
-COPY package.json package-lock.json ./
+# Copy source code
+COPY . ./
 
 # Install default dependencies, print versions of everything
 RUN npm --quiet set progress=false \
  && npm install --only=prod --no-optional \
  && echo "Installed NPM packages:" \
- && npm list || true \
+ && npm list \
  && echo "Node.js version:" \
  && node --version \
  && echo "NPM version:" \
  && npm --version
 
-COPY . ./
+#CMD [ "npm", "start" ]
