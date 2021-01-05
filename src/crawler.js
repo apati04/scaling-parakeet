@@ -2,7 +2,7 @@ const Apify = require('apify');
 const DEFAULT_CRAWLER_LOCALIZATION = 'en';
 const SERVICE_NAME = process.env.SERVICE_NAME; // e.g. 'sda.bing'
 
-const { sleep, log, saveHTML } = Apify.utils;
+const { sleep, log, saveHTML, saveScreenshot } = Apify.utils;
 // const infiniteScroll = require('./infinite_scroll');
 const { MAX_PAGE_RETRIES } = require('./consts');
 const { extractData } = require('./data_extractor');
