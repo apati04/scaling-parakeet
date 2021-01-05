@@ -1,7 +1,7 @@
 const Apify = require('apify');
 const DEFAULT_CRAWLER_LOCALIZATION = 'en';
 const SERVICE_NAME = process.env.SERVICE_NAME; // e.g. 'sda.bing'
-const { saveHTML, saveScreenshot } = './utils.js';
+const { saveHTML, saveScreenshot } = './utils';
 const { sleep, log } = Apify.utils;
 // const infiniteScroll = require('./infinite_scroll');
 const { MAX_PAGE_RETRIES } = require('./consts');
@@ -40,7 +40,7 @@ const setUpCrawler = ({ puppeteerPoolOptions, requestQueue, input }) => {
             try {
                 log.info(`Extracting data from url ${page.url()}`);
                 const extractedData = await extractData(page, request);
-                log.info('Extracted: data: ', extradedData);
+                log.info('Extracted: data: ', extractedData);
                 // extractedData.brandify = { service: SERVICE_NAME };
                 // await Apify.pushData(extractedData);
                 // log.info(`Finished url ${extractedData.url}`);
